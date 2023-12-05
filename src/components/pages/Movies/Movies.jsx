@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useLocation, useSearchParams} from 'react-router-dom';
+import { useLocation, useSearchParams } from 'react-router-dom';
 import MoviesList from 'components/MoviesList/MoviesList';
 import Form from 'components/Form/Form';
 import { getSearch } from 'components/API/API';
@@ -9,10 +9,10 @@ const Movies = () => {
   const [search, setSearch] = useState([]);
   const [loading, setLoading] = useState(false);
   const location = useLocation();
-  const [queryParams, setSearchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
 
   useEffect(() => {
-    const searchGet = new URLSearchParams(location.search).get('query');
+    const searchGet = searchParams.get('query');
 
     if (!searchGet) {
       return;
@@ -21,29 +21,28 @@ const Movies = () => {
     const onSubmit = () => {
       setLoading(true);
       getSearch(searchGet)
-        .then(searchResults => {
+        .then((searchResults) => {
           setSearch(searchResults);
         })
-        .catch(error => {
+        .catch((error) => {
           console.log(error);
         })
         .finally(() => setLoading(false));
     };
     onSubmit();
-  }, [location.search]);
+  }, [searchParams]);
 
   function onSubmit(value) {
-    const newSearchParams = new URLSearchParams();
-    newSearchParams.set('query', value);
-    setSearchParams(newSearchParams);
+    setSearchParams({ query: value }); 
   }
 
   return (
-    <main>
+    <div>
       <Form onSubmit={onSubmit} />
       {loading && <Loader />}
-      {search && <MoviesList movies={search} location={location}/>}
-    </main>
+      {search && <MoviesList movies={search} location={location} />}
+    </div>
   );
 };
+
 export default Movies;
