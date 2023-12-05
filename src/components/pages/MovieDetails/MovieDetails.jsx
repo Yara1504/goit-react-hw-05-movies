@@ -58,7 +58,6 @@ const MovieDetails = () => {
           </div>
         </div>
       )}
-      <hr />
       <div>
         <h3>Additional information</h3>
         <ul>
@@ -69,7 +68,6 @@ const MovieDetails = () => {
             <Link to="reviews">Reviews</Link>
           </li>
         </ul>
-        <hr />
         <Outlet />
         </div>
     </>
