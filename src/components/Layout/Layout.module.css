@@ -1,0 +1,16 @@
+.container {
+    margin: auto;
+}
+
+.header {
+    margin-bottom: 20px;
+}
+
+.link {
+    display: inline-block;
+    padding: 12px;
+    margin-left: 12px;
+    font-weight: 500;
+    font-size: 20px;
+    color: rgb(3, 30, 128);
+}

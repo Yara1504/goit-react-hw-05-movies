@@ -1,0 +1,30 @@
+.form {
+  display: flex;
+  align-items: center;
+}
+.input {
+  padding: 12px 16px;
+  border: 2px solid #283235;
+  font-weight: 500;
+  font-size: 20px;
+  margin-right: 12px;
+  border-radius: 30px;
+}
+.input:hover {
+  color: rgb(117, 71, 255);
+  border: 3px solid #2e23c1;
+}
+.button {
+  padding: 15px 15px;
+  border: 3px solid #2a3031;
+  color: #42a3bb;
+  font-weight: 500;
+  font-size: 20px;
+  border-radius: 30px;
+}
+.button:hover {
+  color: rgb(117, 71, 255);
+  border: 3px solid #2e23c1;
+}
+
+
