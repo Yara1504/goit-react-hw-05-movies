@@ -9,7 +9,7 @@ const Movies = () => {
   const [search, setSearch] = useState([]);
   const [loading, setLoading] = useState(false);
   const location = useLocation();
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [queryParams, setSearchParams] = useSearchParams();
 
   useEffect(() => {
     const searchGet = new URLSearchParams(location.search).get('query');
